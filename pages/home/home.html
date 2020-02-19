@@ -1,13 +1,15 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>Home</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-input placeholder="Enter Input" [(ngModel)]="inputValue" (ionChange)="checkIfExist()"></ion-input>
-  <ion-row *ngFor="let i of matrix; let indexI = index">
-    <ion-col *ngFor="let j of i; let indexJ = index">{{j}} {{indexI}}{{indexJ}}</ion-col>
-    </ion-row>
+	<ion-input placeholder="Enter Input" [(ngModel)]="inputValue" (ionChange)="checkIfExist()"></ion-input>
+	<ion-row *ngFor="let i of matrix; let indexI = index">
+		<ion-col col-1 id="id-{{indexI}}-{{indexJ}}"
+			[ngStyle]="{'background-color': existLetter(indexI, indexJ) ? 'green':'white'}"
+			*ngFor="let j of i; let indexJ = index">{{j}}</ion-col>
+	</ion-row>
 </ion-content>
