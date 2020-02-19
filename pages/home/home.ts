@@ -6,6 +6,7 @@ import { NavController } from "ionic-angular";
   templateUrl: "home.html"
 })
 export class HomePage {
+  a : string;
   inputValue = "";
   matrix = [["a", "b", "c"], ["a", "e", "f"], ["g", "h", "i"]];
   positions = [
